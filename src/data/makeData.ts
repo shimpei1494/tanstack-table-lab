@@ -31,7 +31,7 @@ function randomItem<T>(arr: T[]): T {
 
 function makePerson(id: number): Person {
 	const price = Math.floor(Math.random() * 50000) + 1000;
-	const tax = Math.floor(price * 0.1);
+	const tax = Math.floor(Math.random() * 8000) + 100;
 	const daysAgo = Math.floor(Math.random() * 365);
 	const createdAt = new Date(
 		Date.now() - daysAgo * 24 * 60 * 60 * 1000,
