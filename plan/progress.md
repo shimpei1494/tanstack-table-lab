@@ -31,7 +31,7 @@
 |------|------|-----------|------|
 | Step00 | Basic（最小表示） | ✅ | |
 | Step01 | Accessor vs Cell（ズレ体験） | ✅ | |
-| Step02 | Sorting（row model pipeline） | ⬜ | スタブのみ |
+| Step02 | Sorting（row model pipeline） | ✅ | |
 | Step03 | Filtering（columnFilters / globalFilter） | ⬜ | スタブのみ |
 | Step04 | Pagination（クライアントページング） | ⬜ | スタブのみ |
 | Step05 | Column Visibility | ⬜ | スタブのみ |
@@ -43,7 +43,7 @@
 
 ## 現在のタスク
 
-**次にやること**: Step02 Sorting の実装
+**次にやること**: Step03 Filtering の実装
 
 ---
 
@@ -51,6 +51,8 @@
 
 - Biome の `noNonNullAssertion` ルールのため、`document.getElementById("root")` は null チェックに変更
 - Biome の import 整列により、CSS side-effect import → 外部パッケージ → 内部モジュールの順になる
+- **[Step02]** `...(condition ? { getSortedRowModel: fn } : {})` はキーを「省略」するだけで TanStack Table 内部の `setOptions({ ...prev, ...newOptions })` により prev の値が残る。`undefined` の明示代入が必要
+- **[Step02]** 学習効果を高めるには同一 state で挙動の差を並べる（あり/なし 2テーブル）のが有効
 
 ---
 
