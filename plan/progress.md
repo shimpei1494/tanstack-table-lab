@@ -17,11 +17,11 @@
 | `npm i`（全ライブラリ）| ✅ | Mantine, TanStack Table/Virtual, react-router-dom |
 | Biome 導入・設定 | ✅ | `biome.json` 設定済み |
 | CLAUDE.md 作成 | ✅ | プロジェクトルール記載 |
-| `src/app/` 基盤（App/router/Shell）| ⬜ | |
-| `src/data/types.ts` 作成 | ⬜ | Person 型定義 |
-| `src/data/makeData.ts` 作成 | ⬜ | 50件・10,000件生成関数 |
-| `DataTable` コンポーネント作成 | ⬜ | |
-| `DebugPanel` コンポーネント作成 | ⬜ | |
+| `src/app/` 基盤（App/router/Shell/TopPage）| ✅ | |
+| `src/data/types.ts` 作成 | ✅ | Person 型定義 |
+| `src/data/makeData.ts` 作成 | ✅ | 50件・10,000件生成関数 |
+| `DataTable` コンポーネント作成 | ✅ | |
+| `DebugPanel` コンポーネント作成 | ✅ | |
 
 ---
 
@@ -29,27 +29,28 @@
 
 | Step | 内容 | ステータス | 備考 |
 |------|------|-----------|------|
-| Step00 | Basic（最小表示） | ⬜ | |
-| Step01 | Accessor vs Cell（ズレ体験） | ⬜ | |
-| Step02 | Sorting（row model pipeline） | ⬜ | |
-| Step03 | Filtering（columnFilters / globalFilter） | ⬜ | |
-| Step04 | Pagination（クライアントページング） | ⬜ | |
-| Step05 | Column Visibility | ⬜ | |
-| Step06 | Row Selection | ⬜ | |
-| Step07 | Editing（外部 state 更新） | ⬜ | |
-| Step08 | Virtual（大量データ仮想スクロール） | ⬜ | |
+| Step00 | Basic（最小表示） | ✅ | |
+| Step01 | Accessor vs Cell（ズレ体験） | ⬜ | スタブのみ |
+| Step02 | Sorting（row model pipeline） | ⬜ | スタブのみ |
+| Step03 | Filtering（columnFilters / globalFilter） | ⬜ | スタブのみ |
+| Step04 | Pagination（クライアントページング） | ⬜ | スタブのみ |
+| Step05 | Column Visibility | ⬜ | スタブのみ |
+| Step06 | Row Selection | ⬜ | スタブのみ |
+| Step07 | Editing（外部 state 更新） | ⬜ | スタブのみ |
+| Step08 | Virtual（大量データ仮想スクロール） | ⬜ | スタブのみ |
 
 ---
 
 ## 現在のタスク
 
-**次にやること**: `src/app/` 基盤作成（App.tsx, router.tsx, Shell.tsx）
+**次にやること**: Step01 Accessor vs Cell の実装
 
 ---
 
 ## 実装メモ・気づき
 
-<!-- 実装中に気づいたこと、変更した設計判断などをここに記録 -->
+- Biome の `noNonNullAssertion` ルールのため、`document.getElementById("root")` は null チェックに変更
+- Biome の import 整列により、CSS side-effect import → 外部パッケージ → 内部モジュールの順になる
 
 ---
 
