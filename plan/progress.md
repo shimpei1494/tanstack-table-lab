@@ -32,7 +32,7 @@
 | Step00 | Basic（最小表示） | ✅ | |
 | Step01 | Accessor vs Cell（ズレ体験） | ✅ | |
 | Step02 | Sorting（row model pipeline） | ✅ | |
-| Step03 | Filtering（columnFilters / globalFilter） | ⬜ | スタブのみ |
+| Step03 | Filtering（columnFilters / globalFilter） | ✅ | |
 | Step04 | Pagination（クライアントページング） | ⬜ | スタブのみ |
 | Step05 | Column Visibility | ⬜ | スタブのみ |
 | Step06 | Row Selection | ⬜ | スタブのみ |
@@ -43,7 +43,7 @@
 
 ## 現在のタスク
 
-**次にやること**: Step03 Filtering の実装
+**次にやること**: Step04 Pagination の実装
 
 ---
 
