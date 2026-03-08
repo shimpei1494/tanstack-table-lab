@@ -21,7 +21,7 @@ import { makeData } from "../../data/makeData";
 import type { Person } from "../../data/types";
 
 // コンポーネント外で固定（ランダム再生成を防ぐ）
-const DATA = makeData(50);
+const DATA = makeData(100);
 
 export function Step04Pagination() {
 	const [pagination, setPagination] = useState<PaginationState>({
