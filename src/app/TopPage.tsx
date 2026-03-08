@@ -75,8 +75,9 @@ export function TopPage() {
 			<div>
 				<Title order={1}>TanStack Table Lab</Title>
 				<Text c="dimmed" mt="xs">
-					TanStack Table の学習リポジトリ。Step ごとに機能を追加して、
-					ヘッドレステーブルの仕組みを体験的に理解する。
+					TanStack Table × Mantine の学習リポジトリ。
+					ヘッドレステーブルの仕組みと Mantine UI
+					コンポーネントの組み合わせ方を体験的に理解する。
 				</Text>
 			</div>
 

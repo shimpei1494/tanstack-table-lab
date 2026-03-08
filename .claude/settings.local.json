@@ -1,5 +1,9 @@
 {
 	"permissions": {
-		"allow": ["Bash(npm run check)"]
+		"allow": [
+			"Bash(npm run check)",
+			"mcp__serena__find_file",
+			"Bash(npx tsc --noEmit)"
+		]
 	}
 }
