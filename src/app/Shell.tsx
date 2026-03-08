@@ -1,4 +1,14 @@
-import { AppShell, NavLink, Text, Title } from "@mantine/core";
+import {
+	ActionIcon,
+	AppShell,
+	Group,
+	NavLink,
+	Text,
+	Title,
+	useComputedColorScheme,
+	useMantineColorScheme,
+} from "@mantine/core";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
@@ -16,15 +26,31 @@ const NAV_ITEMS = [
 	{ path: "/step/10", label: "Step 10: Fullscreen" },
 ];
 
+function ColorSchemeToggle() {
+	const { setColorScheme } = useMantineColorScheme();
+	const computed = useComputedColorScheme("dark");
+
+	return (
+		<ActionIcon
+			variant="subtle"
+			onClick={() => setColorScheme(computed === "dark" ? "light" : "dark")}
+			aria-label="テーマ切り替え"
+		>
+			{computed === "dark" ? <IconSun size={16} /> : <IconMoon size={16} />}
+		</ActionIcon>
+	);
+}
+
 export function Shell() {
 	const { pathname } = useLocation();
 
 	return (
 		<AppShell navbar={{ width: 240, breakpoint: "sm" }} padding="md">
 			<AppShell.Navbar p="sm">
-				<Title order={5} mb="xs">
-					TanStack Table Lab
-				</Title>
+				<Group justify="space-between" mb="xs">
+					<Title order={5}>TanStack Table Lab</Title>
+					<ColorSchemeToggle />
+				</Group>
 				<Text size="xs" c="dimmed" mb="md">
 					学習リポジトリ
 				</Text>
