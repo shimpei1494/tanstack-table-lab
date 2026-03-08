@@ -334,6 +334,65 @@ export type Person = {
 
 ---
 
+## Step09: Grouping + Expanding（グループ化と開閉）
+
+目的：
+
+* `getGroupedRowModel()` / `getExpandedRowModel()` の role を理解する
+* グループ行と子行の構造（GroupedRow / LeafRow）の違いを体感する
+* 集計値（aggregationFn）がどの時点で計算されるかを確認する
+
+要件：
+
+* グルーピング対象：`status` 列 **1列のみ** に限定
+  * `grouping` state は `["status"]` で固定（UIから変更不可）
+  * `enableGrouping: true` は `status` 列のみ設定
+* `expanded` state（controlled）
+  * `ExpandedState` / `onExpandedChange`
+* row model 設定：
+  ```ts
+  getGroupedRowModel: getGroupedRowModel(),
+  getExpandedRowModel: getExpandedRowModel(),
+  ```
+* グループ行の表示：
+  * 行頭に展開/折りたたみボタン（`row.getToggleExpandedHandler()`）
+  * `row.getIsGrouped()` で判定し、グループ行のみ展開ボタンを表示
+  * グループ行：`status` 値と子行件数を表示（`row.subRows.length`）
+  * 子行：通常のデータ行として表示（インデント付き）
+* 集計列：`age` 列に `aggregationFn: "mean"` を設定し平均年齢を表示
+  * グループ行では集計値（平均）、子行では個別値を表示
+* 「全展開 / 全折りたたみ」ボタン（`table.toggleAllRowsExpanded()`）
+* DebugPanel：`expanded` state と `getGroupedRowModel().rows.length` を追加表示
+
+---
+
+## Step10: Fullscreen Table（全画面表示）
+
+目的：
+
+* TanStack Table はロジック担当、全画面演出は UI 側の責務であることを体感する
+* Mantine の `useFullscreen` フックを使ったブラウザ Fullscreen API の活用
+* DataTable コンポーネントを変更せずに全画面対応できることを確認する
+
+要件：
+
+* Mantine `useFullscreen` フック（`@mantine/hooks`）を使用
+  ```ts
+  const { ref, toggle, fullscreen } = useFullscreen();
+  ```
+* 全画面トグルボタン（Mantine `ActionIcon` または `Button`）
+  * ボタンアイコン：全画面時は「縮小」、通常時は「拡大」（Mantine Tabler アイコン）
+  * `ref` を表示コンテナ（Paper や div）に付与することで、テーブル部分のみ全画面化
+* 全画面時の表示調整：
+  * コンテナに `height: fullscreen ? "100vh" : "auto"` などの動的スタイルを適用
+  * `stickyHeader` を全画面時に有効にする（DataTable の prop 活用）
+  * 背景色を Mantine `theme.colors` に合わせる（ダークモード対応の意識）
+* 通常表示：Step08 と同様に 1,000 件程度のデータで DataTable を表示
+* DebugPanel は全画面時には非表示（全画面 UI の邪魔にならないよう）
+  * `fullscreen` フラグで制御
+
+---
+
 ## 10. 実装上の注意（重要）
 
 * columns は `useMemo` 推奨（不要な再生成を避ける）
@@ -350,15 +409,17 @@ export type Person = {
 
 ## 11. Done条件（完成の定義）
 
-* Step00〜08が動作し、左ナビで遷移可能
+* Step00〜10が動作し、左ナビで遷移可能
 * 各Stepで：
 
   * Mantine Table表示
-  * 해당Stepの機能が動く
+  * 該当Stepの機能が動く
   * DebugPanelで state と row counts が確認できる
 * Step01で「表示とソート基準のズレ」→「getValueで一致」が体験できる
 * Step07で data state更新による編集ができる
 * Step08で 10,000件でもスクロールが軽い
+* Step09で `status` 列グルーピングの展開/折りたたみと平均年齢の集計が動く
+* Step10で全画面ボタンクリックでテーブルが全画面表示され、戻せる
 
 ---
 
