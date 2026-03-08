@@ -12,6 +12,8 @@ const NAV_ITEMS = [
 	{ path: "/step/06", label: "Step 06: Row Selection" },
 	{ path: "/step/07", label: "Step 07: Editing" },
 	{ path: "/step/08", label: "Step 08: Virtual" },
+	{ path: "/step/09", label: "Step 09: Grouping + Expanding" },
+	{ path: "/step/10", label: "Step 10: Fullscreen" },
 ];
 
 export function Shell() {

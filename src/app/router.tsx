@@ -8,6 +8,8 @@ import { Step05ColumnVisibility } from "../features/step05-column-visibility/Ste
 import { Step06RowSelection } from "../features/step06-row-selection/Step06RowSelection";
 import { Step07Editing } from "../features/step07-editing/Step07Editing";
 import { Step08Virtual } from "../features/step08-virtual/Step08Virtual";
+import { Step09Grouping } from "../features/step09-grouping/Step09Grouping";
+import { Step10Fullscreen } from "../features/step10-fullscreen/Step10Fullscreen";
 import { Shell } from "./Shell";
 import { TopPage } from "./TopPage";
 
@@ -26,6 +28,8 @@ export const router = createBrowserRouter([
 			{ path: "step/06", element: <Step06RowSelection /> },
 			{ path: "step/07", element: <Step07Editing /> },
 			{ path: "step/08", element: <Step08Virtual /> },
+			{ path: "step/09", element: <Step09Grouping /> },
+			{ path: "step/10", element: <Step10Fullscreen /> },
 		],
 	},
 ]);

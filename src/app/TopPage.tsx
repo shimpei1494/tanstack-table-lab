@@ -1,7 +1,16 @@
-import { Button, Card, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import {
+	Badge,
+	Button,
+	Card,
+	Group,
+	SimpleGrid,
+	Stack,
+	Text,
+	Title,
+} from "@mantine/core";
 import { Link } from "react-router-dom";
 
-const STEPS = [
+const STEPS: { path: string; label: string; desc: string; badge?: string }[] = [
 	{
 		path: "/step/00",
 		label: "Step 00: Basic",
@@ -47,6 +56,17 @@ const STEPS = [
 		label: "Step 08: Virtual",
 		desc: "10,000件でも軽い仮想スクロール。row model と描画の分離。",
 	},
+	{
+		path: "/step/09",
+		label: "Step 09: Grouping + Expanding",
+		desc: "getGroupedRowModel / getExpandedRowModel でグループ化と開閉。aggregationFn で平均値を集計。",
+	},
+	{
+		path: "/step/10",
+		label: "Step 10: Fullscreen",
+		desc: "Mantine の useFullscreen フックでテーブルを全画面表示。TanStack Table のロジックは変更不要。",
+		badge: "番外編",
+	},
 ];
 
 export function TopPage() {
@@ -61,11 +81,18 @@ export function TopPage() {
 			</div>
 
 			<SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-				{STEPS.map(({ path, label, desc }) => (
+				{STEPS.map(({ path, label, desc, badge }) => (
 					<Card key={path} withBorder padding="md">
-						<Text fw={700} size="sm" mb="xs">
-							{label}
-						</Text>
+						<Group gap="xs" mb="xs">
+							<Text fw={700} size="sm">
+								{label}
+							</Text>
+							{badge && (
+								<Badge size="xs" variant="light" color="orange">
+									{badge}
+								</Badge>
+							)}
+						</Group>
 						<Text size="xs" c="dimmed" mb="md">
 							{desc}
 						</Text>

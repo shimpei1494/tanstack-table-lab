@@ -38,14 +38,14 @@
 | Step06 | Row Selection | ✅ | |
 | Step07 | Editing（外部 state 更新） | ✅ | |
 | Step08 | Virtual（大量データ仮想スクロール） | ✅ | |
-| Step09 | Grouping + Expanding（status列グループ化・開閉・集計） | ⬜ | |
-| Step10 | Fullscreen Table（全画面表示） | ⬜ | |
+| Step09 | Grouping + Expanding（status列グループ化・開閉・集計） | ✅ | |
+| Step10 | Fullscreen Table（全画面表示） | ✅ | |
 
 ---
 
 ## 現在のタスク
 
-**次にやること**: Step09 Grouping + Expanding の実装
+**次にやること**: 全 Step 完了 🎉（Step00〜10）
 
 ---
 
