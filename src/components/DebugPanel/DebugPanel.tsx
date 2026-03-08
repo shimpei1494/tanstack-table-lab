@@ -22,6 +22,7 @@ export function DebugPanel<T>({ table }: DebugPanelProps<T>) {
 	const sortedCount = table.getSortedRowModel().rows.length;
 	const prePaginationCount = table.getPrePaginationRowModel().rows.length;
 	const finalCount = table.getRowModel().rows.length;
+	const selectedCount = table.getSelectedRowModel().rows.length;
 
 	return (
 		<Paper withBorder p="md" mt="md">
@@ -50,6 +51,11 @@ export function DebugPanel<T>({ table }: DebugPanelProps<T>) {
 						<Text size="xs" fw={700}>
 							Final (getRowModel): {finalCount}
 						</Text>
+						{selectedCount > 0 && (
+							<Text size="xs" c="blue" fw={700}>
+								Selected: {selectedCount}
+							</Text>
+						)}
 					</Group>
 
 					<Text size="xs" fw={600} c="dimmed" mt="xs">
