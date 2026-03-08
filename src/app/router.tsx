@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { Step00Basic } from "../features/step00-basic/Step00Basic";
 import { Step01AccessorVsCell } from "../features/step01-accessor-vs-cell/Step01AccessorVsCell";
 import { Step02Sorting } from "../features/step02-sorting/Step02Sorting";
@@ -13,7 +13,7 @@ import { Step10Fullscreen } from "../features/step10-fullscreen/Step10Fullscreen
 import { Shell } from "./Shell";
 import { TopPage } from "./TopPage";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		path: "/",
 		element: <Shell />,
