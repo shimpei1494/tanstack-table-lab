@@ -36,14 +36,14 @@
 | Step04 | Pagination（クライアントページング） | ✅ | |
 | Step05 | Column Visibility | ✅ | |
 | Step06 | Row Selection | ✅ | |
-| Step07 | Editing（外部 state 更新） | ⬜ | スタブのみ |
+| Step07 | Editing（外部 state 更新） | ✅ | |
 | Step08 | Virtual（大量データ仮想スクロール） | ⬜ | スタブのみ |
 
 ---
 
 ## 現在のタスク
 
-**次にやること**: Step07 Editing の実装
+**次にやること**: Step08 Virtual の実装
 
 ---
 
